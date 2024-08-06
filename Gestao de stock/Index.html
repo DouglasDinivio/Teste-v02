@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Screen</title>
+  <link rel="stylesheet" href="HomeStyle.css">
+
+  <style>
+:root {
+    --seasalt: hsla(0, 0%, 98%, 1);
+    --wenge: hsla(285, 8%, 40%, 1);
+    --indian-red: hsla(359, 50%, 59%, 1);
+    --eerie-black: hsla(0, 0%, 13%, 1);
+}
+body {
+  user-select: none;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(107, 95, 111, 0.486);
+  color: var(--seasalt);   
+  height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.screen-1 { 
+  background-color: var(--seasalt);
+  color: var(--eerie-black);  
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  box-shadow: 0 0 2em hsl(35, 10%, 51%);
+  gap: 2em;
+  width: 350px;
+}
+
+.Logo{
+  padding: 20px;
+  text-align: center;
+}
+
+
+.Logo img{
+  padding: 0px;
+  height: 90px;
+  width: 180px;
+}
+
+.codigo, .password {
+  border: 2px solid var(--eerie-black);
+    padding: 10px;
+    color: var(--eerie-black);
+    background-color: var(--seasalt);  box-shadow: 0 0 2em hsl(231deg 62% 94%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.codigo input, .password input {
+  outline: none;
+  border: none;
+}
+
+.codigo input::placeholder, .password input::placeholder {
+  color: hsl(0deg 0% 0%);
+  font-size: 1em;
+}
+
+
+
+.password .show-hide {
+  margin-right: -5em;
+}
+
+
+input:focus,
+textarea:focus {
+    border-color: var(--indian-red);
+}
+
+
+.Login {
+  padding: 1em;
+  background-color: var(--indian-red);
+  color: var(--seasalt); 
+  color: hsl(0 0 100);
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login{
+  text-align: center;
+  justify-content: center;
+}
+
+button:hover {
+    background: hsl(0, 0%, 13%);
+    transition-duration: 1s;
+}
+
+a {
+    text-decoration: none;
+    color: #fefefe;
+    padding: 0px;
+}
+
+a:hover {
+    color:  #CB6465ff;
+}
+
+
+.footer {
+  display: flex;
+  font-size: 0.7em;
+  color: hsl(0deg 0% 37%);
+  gap: 14em;
+  padding-bottom: 10em;
+}
+
+.footer span {
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+
+.Logo{
+  padding: 20px;
+  text-align: center;
+}
+
+.login{
+  text-align: center;
+}
+
+.Logo img{
+  padding: 0px;
+  height: 90px;
+  width: 180px;
+}
+
+
+}
+
+  </style>
+
+</head>
+
+
+<body>
+  <div class="screen-1">
+    <div class="Logo">
+    <img src="Logo.png" alt="Logo">
+    </div>
+    <div class="codigo">
+      <div class="sec-2">
+        <input type="text" id="codigo" name="codigo" placeholder="Codigo">
+      </div>
+    </div>
+    <div class="password">
+      <div class="sec-2">
+        <input type="password" id="password" name="password" placeholder="············">
+      </div>
+    </div>
+
+    <div class="login">
+    <button class="Login"> <a href="Home.html"> Entrar</a></button>
+    </div>
+  </div>
+</body>
+</html>

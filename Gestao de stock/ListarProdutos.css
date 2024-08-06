@@ -1,0 +1,334 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    user-select: none;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: hsl(218deg 50% 91%);
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: hsl(233deg 36% 38%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.navbar-icon {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+.menu-toggle svg {
+    width: 24px;
+    height: 24px;
+}
+
+.menu {
+    width: 22%;
+    float: left;
+    padding-top: 90px;
+    border: none;
+    height: 85vh;
+    transition: transform 0.3s ease;
+    background: hsl(218deg 50% 91%);
+}
+
+
+
+.main {
+    width: 78%;
+    float: left;
+    padding: 15px;
+    border: none;
+    height: 85vh;
+    text-align: center;
+    overflow-y: auto;
+    background: hsl(213deg 85% 97%);
+    margin-top: 50px;
+    position: relative; 
+}
+
+
+.Pesquisa{
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+}
+
+/*=========================Edit button pop-up==============================*/
+
+.cd-popup1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.cd-popup1.is-visible1 {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.cd-popup-container1 {
+    margin: 0; 
+    padding: 3em 1em;
+    width: 100%;
+    max-width: 400px;
+    background: rgba(107, 95, 111, 0.13); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    text-align: center;
+    border-radius: 0.25em;
+    transform: translateY(0);
+    transition: transform 0.3s;
+    border-radius: 20px;
+}
+
+
+
+.cd-popup-close1 {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+
+
+/*=========================Delete button pop-up==============================*/
+
+
+.cd-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.cd-popup.is-visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.cd-popup-container {
+    margin: 0; 
+    padding: 3em 1em;
+    width: 100%;
+    max-width: 400px;
+    background: rgba(107, 95, 111, 0.13); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    text-align: center;
+    border-radius: 0.25em;
+    transform: translateY(0);
+    transition: transform 0.3s;
+    border-radius: 20px;
+}
+
+
+.cd-buttons a:hover {
+    color: #1d1d1d;
+}
+
+.cd-buttons {
+    display: flex;
+    justify-content: space-between;
+    color: var(--seasalt);
+    border: none;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: medium;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cd-buttons a {
+    width: 50%;
+    height: 60px;
+    line-height: 60px;
+    background:  hsla(359, 50%, 59%, 0.500);
+    color: #CB6465ff;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.cd-buttons a:last-child {
+    text-decoration: none;
+    background: hsl(213deg 85% 97%);
+    color: #242323;
+}
+
+.cd-buttons a:last-child:hover {
+    background:  hsla(359, 50%, 59%, 0.500);
+    color: #fefefe;
+}
+
+.cd-buttons a:hover {
+    background: hsl(213deg 85% 97%);
+    transition-duration: 1s;
+}
+
+.cd-buttons button:hover {
+    background: #212121ff;
+    transition-duration: 1s;
+}
+
+.cd-buttons a {
+    text-decoration: none;
+    color: #fefefe;
+}
+
+
+.cd-popup-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+
+/*=========================Pop-up Form==============================*/
+
+
+
+
+/*=================»»»»========Table====================»»»=========*/
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border-bottom: 1px solid rgba(33, 33, 33, 0.089);
+    text-align: center;
+    padding: 8px;
+}
+
+th {
+    background: rgba(107, 95, 111, 0.13);
+    color: #202020;
+}
+
+tr:nth-child(even) {
+    background-color: #fefefe;
+}
+
+.actualizacao {
+    color: #aaaa;
+}
+
+.operations i {
+    font-size: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    color: black;
+}
+
+.operations i:last-child {
+    margin-right: 1;
+}
+
+@media (max-width: 1057px) {
+    .menu {
+        display: none;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        float: none;
+        padding-top: 0;
+        overflow-y: auto;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: hsl(213deg 85% 97%);
+        z-index: 1000;
+    }
+
+    .menu.active {
+        display: block;
+        transform: translateX(0);
+    }
+
+    .menu button {
+        height: 40px;
+        width: 200px;
+        border-color: #962d2d27;
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-size: medium;
+        border-radius: 10px;
+    }
+
+    .main {
+        width: 100%;
+        float: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+button { cursor: pointer; }

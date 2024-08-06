@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Gestao Stock</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='HomeStyle.css'>
+    <script src='main.js' defer></script>
+</head>
+<body>
+    <div class="navbar">
+        <img class="Logo" src="Logo.png" alt="Logo">
+        <button class="menu-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+    
+    <div class="menu">
+        <ul style="list-style: none;">
+            <li><button><a href="CadastrarProduto.html">Cadastrar Produto</a></button></li>
+            <li><button><a href="ListarProdutos.html">Listar Produtos</a></button></li>
+            <li><button><a href="Venda.html">Venda</a></button></li>
+            <li><button><a href="listarVendas.html">Listar Vendas</a></button></li>
+            <li><button><a href="CadastrarUsuario.html">Cadastrar Usuario</a></button></li>
+            <li><button><a href="ListarUsuarios.html">Listar Usuarios</a></button></li>
+            <li><button><a href="HistoricoDeInventarios.html">Inventarios</a></button></li>
+            <li><button><a href="Index.html">Sair</a></button></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h1>Bem Vindo Ao Gestor De Stock</h1>
+        <p>...</p>
+    </div>
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+
+    menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('active');
+    });
+});
+
+</script>

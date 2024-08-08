@@ -90,7 +90,7 @@ body {
     width: 100%;
 }
 
-/*=========================Edit button pop-up==============================*/
+/*=========================Adicionar button pop-up==============================*/
 
 .cd-popup1 {
     position: fixed;
@@ -116,9 +116,10 @@ body {
     margin: 0; 
     padding: 3em 1em;
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
+    height: 75%;
     background: rgba(107, 95, 111, 0.13); 
-    backdrop-filter: blur(10px); 
+    backdrop-filter: blur(50px); 
     -webkit-backdrop-filter: blur(10px); 
     text-align: center;
     border-radius: 0.25em;
@@ -139,6 +140,58 @@ body {
     cursor: pointer;
     background: transparent;
 }
+
+/*=========================Edit button pop-up==============================*/
+
+.cd-popup2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.cd-popup2.is-visible2 {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.cd-popup-container2 {
+    margin: 0; 
+    padding: 3em 1em;
+    width: 100%;
+    max-width: 600px;
+    height: 75%;
+    background: rgba(107, 95, 111, 0.13); 
+    backdrop-filter: blur(50px); 
+    -webkit-backdrop-filter: blur(10px); 
+    text-align: center;
+    border-radius: 0.25em;
+    transform: translateY(0);
+    transition: transform 0.3s;
+    border-radius: 20px;
+}
+
+
+
+.cd-popup-close2 {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
 
 
 

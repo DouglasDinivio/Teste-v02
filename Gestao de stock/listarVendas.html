@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Listar de vendas</title>
+    <title>Vendas</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='ListarProdutos.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='HomeStyle.css'>
@@ -12,37 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-        .form-row {
-            margin-bottom: 15px;
-        }
-
-        .form-group {
-            margin-bottom: 10px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-
-        .submit-button {
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-
-        .submit-button:hover {
-            background-color: #0056b3;
-        }
+      a{
+        text-decoration: none;
+        color: black;
+      }
     </style>
 
     <script>
@@ -454,19 +427,19 @@
 
     <div class="menu">
         <ul style="list-style: none;">
-            <li><button><a href="CadastrarProduto.html">Cadastrar Produto</a></button></li>
-            <li ><button><a href="ListarProdutos.html">Listar Produtos</a></button></li>
-            <li class="active"> <button><a href="Venda.html">Venda</a></button></li>
-            <li><button><a href="listarVendas.html">Listar Vendas</a></button></li>
-            <li><button><a href="CadastrarUsuario.html">Cadastrar Usuario</a></button></li>
-            <li><button><a href="ListarUsuarios.html">Listar usuarios</a></button></li>
+            <li ><button><a href="ListarProdutos.html">Produtos</a></button></li>
+            <li class="active"><button><a href="listarVendas.html">Vendas</a></button></li>
+            <li><button><a href="ListarUsuarios.html">Usuarios</a></button></li>
             <li><button><a href="HistoricoDeInventarios.html">Inventarios</a></button></li>
             <li><button><a href="Index.html">Sair</a></button></li>
         </ul>
     </div>
 
     <div class="main">
-        <h1>Lista de vendas</h1>
+        <h1>Vendas</h1>
+        <div class="Adcionar">
+            <button href="#0" class="cd-popup-trigger1"><i class="fa fa-plus" style="font-size:12px"></i> Venda</button>
+            </div>
 
         <div class="Pesquisa" >
                 <input style="width: 200px; height: 26px;border-color: rgba(107, 95, 111, 0.13); color: rgba(107, 95, 111, 0.884);" type="date" placeholder="Data.." name="search">
@@ -478,12 +451,12 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Código</th>
+                        <th>ID</th>
                         <th>Produto</th>
                         <th>Quantidade</th>
                         <th>Preço Unitário(Mzn)</th>
                         <th>Preço Total(Mzn)</th>
-                        <th>Data de venda</th>
+                        <th>Valor Total</th>
                         <th>Metodo de pagamento</th>
 
                     </tr>
@@ -499,78 +472,9 @@
                         <td>3</td>
                         <td>100</td>
                         <td>300</td>
-                        <td data-label="Última atualização" class="actualizacao">02/08/2024</td>
+                        <td >30 000</td>
                         <td class="operations">
-                            <a href="#0" class="cd-popup-trigger1"><i class="fa fa-edit"></i></a>
-                            <div class="cd-popup1">
-                                <div class="cd-popup-container1">
-                                    <form>
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <label for="category">Categoria:</label>
-                                                <select id="category" name="category" required>
-                                                    <option value="">Selecione uma Categoria</option>
-                                                    <option value="Aderente">Aderente</option>
-                                                    <option value="Agrafos">Agrafos</option>
-                                                    <option value="CartaoCapa">Cartão Capa</option>
-                                                    <option value="ChapaUnitex">Chapa Unitex</option>
-                                                    <option value="Cordavivo">Corda Vivo</option>
-                                                    <option value="FitaDeSofa">Fita de Sofá</option>
-                                                    <option value="Madeira">Madeira</option>
-                                                    <option value="Material">Material</option>
-                                                    <option value="MolaDeCama">Mola de Cama</option>
-                                                    <option value="Molas">Molas</option>
-                                                    <option value="Parafuso">Parafuso</option>
-                                                    <option value="ParamCartaoCapa">Param. Cartão Capa</option>
-                                                    <option value="PesDeBase">Pés de Base</option>
-                                                    <option value="Pianise">Pianise</option>
-                                                    <option value="Cola">Cola</option>
-                                                    <option value="Esponja">Esponja</option>
-                                                    <option value="TecidoBambo">Tecido Bambo</option>
-                                                    <option value="Tela">Tela</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <label for="productName">Nome do Produto:</label>
-                                                <input type="text" id="productName" name="productName" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="productCode">Preço Unitário :</label>
-                                                <input type="text" id="productCode" name="productCode" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="productCode">Preço Atacado :</label>
-                                                <input type="text" id="productCode" name="productCode" required>
-                                            </div>
-                                        </div>
-
-                                        <div id="specificFields" class="form-row"></div>
-                                        <button type="submit" class="submit"><a href="#">Submeter</a></button>
-
-                                    </form>
-
-                                    <a href="#0" class="cd-popup-close1"><i class="fa fa-close" style="font-size:24px;color:rgba(255, 0, 0, 0.432);
-  "></i></a>
-                                </div>
-                            </div>
-
-
-                            <a href="#0" class="cd-popup-trigger"><i class="fa fa-trash-o"></i></a>
-
-                            <div class="cd-popup">
-                                <div class="cd-popup-container">
-                                    <p style="color: black;">Apagar este producto?</p>
-                                    <div class="cd-buttons">
-                                        <a href="#0">Yes</a>
-                                        <a href="#0">No</a>
-                                    </div>
-                                    <a href="#0" class="cd-popup-close"><i class="fa fa-close" style="font-size:24px;color:rgba(255, 0, 0, 0.432);
-"></i></a>
-                                </div>
-                            </div>
+                            <a href="#0" class="cd-popup-trigger1">M-pesa</a>
                         </td>
                     </tr>
 

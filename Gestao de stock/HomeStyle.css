@@ -63,7 +63,7 @@ body {
     transition: transform 0.3s ease;
     background-color: var(--seasalt);
     color: var(--eerie-black); 
-    padding-right: 242px; 
+    padding-right: 300px; 
 }
 
 img{
@@ -110,6 +110,16 @@ a:hover {
 .active button {
     box-shadow: 0 0 2em #CB6465ff;
     background: rgba(33, 33, 33, 0.13);
+}
+
+.Adcionar{
+    text-align: right;
+}
+
+.Adcionar button{
+    width: fit-content;
+    height: 26px;
+    padding-right: 20px;
 }
 
 .main {
@@ -165,20 +175,24 @@ a:hover {
 
 
 @media (max-width: 1057px) {
+    body{
+        overflow-x: hidden;
+
+    }
     .menu {
         display: none;
         justify-content: center;
         text-align: center;
         width: 100%;
         float: none;
-        padding-top: 50px;
+        padding-top: 100px;
         overflow-y: auto;
         position: absolute;
-        top: 60px; 
         left: 0;
         background-color: var(--seasalt);
         color: var(--eerie-black);          
         z-index: 1000;
+        overflow-x: hidden;
     }
 
     .menu.active {
@@ -196,6 +210,8 @@ a:hover {
         font-weight: bold;
         font-size: medium;
         border-radius: 10px;
+        margin-left: 50%;
+        overflow-x: hidden;
     }
 
     button.menu-toggle{
@@ -236,6 +252,7 @@ a:hover {
     .main {
         width: 100%;
         float: none;
+        overflow-x: hidden;
     }
 
     .menu-toggle {

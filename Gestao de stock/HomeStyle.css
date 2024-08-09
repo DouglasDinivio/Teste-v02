@@ -172,6 +172,11 @@ a:hover {
     justify-content: center;
 }
 
+.Manutençao{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
 
 
 @media (max-width: 1057px) {

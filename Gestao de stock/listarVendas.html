@@ -18,404 +18,174 @@
       }
     </style>
 
-    <script>
-        function showCategoryFields() {
-            const category = document.getElementById('category').value;
-            const specificFields = document.getElementById('specificFields');
-            specificFields.innerHTML = '';
+<script>
+    function showCategoryFields() {
+        const category = document.getElementById('category').value;
+        const specificFields = document.getElementById('specificFields');
+        specificFields.innerHTML = '';
 
-            const fields = {
-                Aderente: `
+        const fields = {
+            Aderente: `
+            <div class="form-group">
+                <label for="aderenteMeasurement">Quantidade</label>
+                <input type="text" id="aderenteMeasurement" name="aderenteMeasurement" step="0.01">
+            </div>`,
+
+            Agrafos: `
+                 <div class="form-group">
+                <label for="agrafoQuantity">Quantidade:</label>
+                 <input type="Text" id="agrafoQuantity" name="agrafoQuantity">
+                </div>
+                
+            <div class="form-group">
+                <label for="Type" >Tipo:</label>
+                <select id="Type" name="Type">
+                    <option value="M21">M21</option>
+                    <option value="P88">P88</option>
+                    <option value="10-13">1008</option>
+                </select>
+            </div> `,
+
+
+            CartaoCapa: `
+                        <div class="form-group">
+                <label for="agrafoQuantity">Quantidade:</label>
+                 <input type="Text" id="agrafoQuantity" name="agrafoQuantity">
+                </div>`,
+
+            ChapaUnitex: `
+                          <div class="form-group">
+                <label for="agrafoQuantity">Quantidade:</label>
+                 <input type="Text" id="agrafoQuantity" name="agrafoQuantity">
+                </div>`,
+
+            Cordavivo: `
+                           <div class="form-group">
+                <label for="CordavivoQuantity">Tamanho (Metros):</label>
+                 <input type="Text" id="CordavivoQuantity" name="CordavivoQuantity">
+                </div>`,
+
+            FitaDeSofa: `
+                              <div class="form-group">
+                <label for="FitaDeSofaQuantity">Tamanho (Metros):</label>
+                 <input type="Text" id="FitaDeSofaQuantity" name="FitaDeSofaQuantity">
+                </div>`,
+
+            Madeira: `
+                                  <div class="form-group">
+                <label for="MadeiraQuantity">Tamanho (Metros):</label>
+                 <input type="Text" id="MadeiraQuantity" name="MadeiraQuantity">
+                </div>`,
+
+            MolaDeColchao: `
+                                 <div class="form-group">
+                <label for="MolaDeColchaoQuantity">Quantidade:</label>
+                 <input type="Text" id="MolaDeColchaoQuantity" name="MolaDeColchaoQuantity">
+                </div>
+
                    <div class="form-group">
-                    <label for="aderenteType">Tipo de Aderente:</label>
-                    <select id="aderenteMaterial" name="aderenteMaterial">
-                        <option value="N/A">N/A</option>
-                        <option value="Papel autoadesivo">Papel autoadesivo</option>
-                        <option value="Filme plástico aderente">Filme plástico aderente</option>
-                        <option value="Feito de alumínio">Feito de alumínio</option>
-                    </select>
-                </div>
+                <label for="MolaDeColchaoType">Tamanho:</label>
+                <select id="MolaDeColchaoType" name="MolaDeColchaoType">
+                    <option value="Solteiro">Solteiro</option>
+                    <option value="3 Quarts">3 Quartos</option>
+                    <option value="Casal">Casal</option>
+                    <option value="Queen">Queen</option>
+                    <option value="King">King</option>
+                    <option value="Medida especial">Medida especialss</option>
+                </select>
+            </div>
 
-                <div class="form-group">
-                    <label for="aderenteMaterial">Material:</label>
-                    <select id="aderenteMaterial" name="aderenteMaterial">
-                        <option value="N/A">N/A</option>
-                        <option value="Papel">Papel</option>
-                        <option value="PVC">PVC</option>
-                        <option value="Alumínio">Alumínio</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="aderenteMeasurement">Medida (Cm):</label>
-                    <input type="text" id="aderenteMeasurement" name="aderenteMeasurement" placeholder="L x C x E" step="0.01">
+            <div class="form-group">
+                <label for="MolaType">Tipo :</label>
+                <select id="MolaType" name="MolaType">
+                    <option value="Mola Normal">Mola Normal</option>
+                    <option value="Mola Medicinal">Mola Medicinal</option>
+                </select>
+            </div>`,
+
+            MolaDeEstufaria: `
+                                 <div class="form-group">
+                <label for="MolaDeEstufaria">Quantidade:</label>
+                 <input type="Text" id="MolaDeEstufaria" name="MolaDeEstufaria">
                 </div>`,
 
-                Agrafos: `
-                <div class="form-group">
-                    <label for="agrafoSize">Pernas:</label>
-                    <input type="text" id="agrafoSize" Placeholder= "(mm)/(in)"name="agrafoSize">
-                </div>
-
-                <div class="form-group">
-                    <label for="agrafoSize">Coroa:</label>
-                    <input type="text" id="agrafoSize" Placeholder= "(mm)/(in)"name="agrafoSize">
-                </div>
-
-                <div class="form-group">
-                    <label for="agrafoMaterial">Material:</label>
-                    <select id="agrafoMaterial" name="agrafoMaterial">
-                        <option value="N/A">N/A</option>
-                        <option value="Aço">Aço</option>
-                        <option value="Aço Inoxidável">Aço Inoxidável</option>
-                        <option value="Metal com revestimento">Metal com revestimento</option>
-                    </select>
-                </div> 
-
-                <div class="form-group">
-                    <label for="agrafoQuantity">Quantidade:</label>
-                     <input type="Text" id="agrafoQuantity"  Placeholder= "Caixas /Tiras"name="agrafoQuantity">
-                    </div>`,
-
-
-                CartaoCapa: `
-                <div class="form-group">
-                    <label for="agrafoSize">Dimensões:</label>
-                    <input type="text" id="agrafoSize" Placeholder= "(mm) / (in)"name="agrafoSize">
-                </div>
-
-                <div class="form-group">
-                    <label for="agrafoSize">Gramatura:</label>
-                    <input type="text" id="agrafoSize" Placeholder= "(mm) / (in)"name="agrafoSize">
-                </div>
-
-                <div class="form-group">
-                    <label for="agrafoMaterial">Material:</label>
-                    <select id="agrafoMaterial" name="agrafoMaterial">
-                        <option value="N/A">N/A</option>
-                        <option value="Aço">Aço</option>
-                        <option value="Aço Inoxidável">Aço Inoxidável</option>
-                        <option value="Metal com revestimento">Metal com revestimento</option>
-                    </select>
-                </div> 
-
-                <div class="form-group">
-                    <label for="agrafoQuantity">Quantidade:</label>
-                     <input type="Text" id="agrafoQuantity"  Placeholder= "Caixas /Tiras"name="agrafoQuantity">
-                    </div>`,
-
-                ChapaUnitex: `
-                <div class="form-group">
-                    <label for="agrafoSize">Pernas:</label>
-                    <input type="text" id="agrafoSize" Placeholder= "(mm) / (in)"name="agrafoSize">
-                </div>
-
-                <div class="form-group">
-                    <label for="agrafoSize">Coroa:</label>
-                    <input type="text" id="agrafoSize" Placeholder= "(mm) / (in)"name="agrafoSize">
-                </div>
-
-                <div class="form-group">
-                    <label for="agrafoMaterial">Material:</label>
-                    <select id="agrafoMaterial" name="agrafoMaterial">
-                        <option value="N/A">N/A</option>
-                        <option value="Aço">Aço</option>
-                        <option value="Aço Inoxidável">Aço Inoxidável</option>
-                        <option value="Metal com revestimento">Metal com revestimento</option>
-                    </select>
-                </div> 
-
-                <div class="form-group">
-                    <label for="agrafoQuantity">Quantidade (unidades):</label>
-                     <input type="Text" id="agrafoQuantity"  Placeholder= "Caixas /Tiras"name="agrafoQuantity">
-                    </div>`,
-
-                Cordavivo: `
-                <div class="form-group">
-                    <label for="agrafoSize">Pernas:</label>
-                    <input type="text" id="agrafoSize" Placeholder= "(mm) / (in)"name="agrafoSize">
-                </div>
-
-                <div class="form-group">
-                    <label for="agrafoSize">Coroa:</label>
-                    <input type="text" id="agrafoSize" Placeholder= "(mm) / (in)"name="agrafoSize">
-                </div>
-
-                <div class="form-group">
-                    <label for="agrafoMaterial">Material:</label>
-                    <select id="agrafoMaterial" name="agrafoMaterial">
-                        <option value="N/A">N/A</option>
-                        <option value="Aço">Aço</option>
-                        <option value="Aço Inoxidável">Aço Inoxidável</option>
-                        <option value="Metal com revestimento">Metal com revestimento</option>
-                    </select>
-                </div> 
-
-                <div class="form-group">
-                    <label for="agrafoQuantity">Quantidade (unidades):</label>
-                     <input type="Text" id="agrafoQuantity"  Placeholder= "Caixas /Tiras"name="agrafoQuantity">
-                    </div>`,
-
-
-                FitaDeSofa: `
-                <div class="form-group">
-                    <label for="woodType">Tipo de Madeira:</label>
-                    <input type="text" id="woodType" name="woodType">
-                </div>
-                <div class="form-group">
-                    <label for="woodMeasurement">Medida (metros cúbicos):</label>
-                    <input type="number" id="woodMeasurement" name="woodMeasurement" step="0.01">
-                </div>
-                <div class="form-group">
-                    <label for="woodMaterial">Material:</label>
-                    <select id="woodMaterial" name="woodMaterial">
-                        <option value="Madeira">Madeira</option>
-                        <option value="Compensado">Compensado</option>
-                        <option value="MDF">MDF</option>
-                    </select>
-                </div>`,
-
-                Madeira: `
-                <div class="form-group">
-                    <label for="woodType">Tipo de Madeira:</label>
-                    <input type="text" id="woodType" name="woodType">
-                </div>
-                <div class="form-group">
-                    <label for="woodMeasurement">Medida (metros cúbicos):</label>
-                    <input type="number" id="woodMeasurement" name="woodMeasurement" step="0.01">
-                </div>
-                <div class="form-group">
-                    <label for="woodMaterial">Material:</label>
-                    <select id="woodMaterial" name="woodMaterial">
-                        <option value="Madeira">Madeira</option>
-                        <option value="Compensado">Compensado</option>
-                        <option value="MDF">MDF</option>
-                    </select>
-                </div>`,
-
-                Material: `
-                <div class="form-group">
-                    <label for="woodType">Tipo de Madeira:</label>
-                    <input type="text" id="woodType" name="woodType">
-                </div>
-                <div class="form-group">
-                    <label for="woodMeasurement">Medida (metros cúbicos):</label>
-                    <input type="number" id="woodMeasurement" name="woodMeasurement" step="0.01">
-                </div>
-                <div class="form-group">
-                    <label for="woodMaterial">Material:</label>
-                    <select id="woodMaterial" name="woodMaterial">
-                        <option value="Madeira">Madeira</option>
-                        <option value="Compensado">Compensado</option>
-                        <option value="MDF">MDF</option>
-                    </select>
-                </div>`,
-
-                MolaDeCama: `
-                <div class="form-group">
-                    <label for="woodType">Tipo de Madeira:</label>
-                    <input type="text" id="woodType" name="woodType">
-                </div>
-                <div class="form-group">
-                    <label for="woodMeasurement">Medida (metros cúbicos):</label>
-                    <input type="number" id="woodMeasurement" name="woodMeasurement" step="0.01">
-                </div>
-                <div class="form-group">
-                    <label for="woodMaterial">Material:</label>
-                    <select id="woodMaterial" name="woodMaterial">
-                        <option value="Madeira">Madeira</option>
-                        <option value="Compensado">Compensado</option>
-                        <option value="MDF">MDF</option>
-                    </select>
+            Parafuso: `
+                                 <div class="form-group">
+                <label for="Parafuso">Quantidade:</label>
+                 <input type="Text" id="Parafuso" name="Parafuso">
                 </div>`,
 
 
-                Molas: `
-                <div class="form-group">
-                    <label for="woodType">Tipo de Madeira:</label>
-                    <input type="text" id="woodType" name="woodType">
-                </div>
-                <div class="form-group">
-                    <label for="woodMeasurement">Medida (metros cúbicos):</label>
-                    <input type="number" id="woodMeasurement" name="woodMeasurement" step="0.01">
-                </div>
-                <div class="form-group">
-                    <label for="woodMaterial">Material:</label>
-                    <select id="woodMaterial" name="woodMaterial">
-                        <option value="Madeira">Madeira</option>
-                        <option value="Compensado">Compensado</option>
-                        <option value="MDF">MDF</option>
-                    </select>
+            PesDeBase: `
+                                        <div class="form-group">
+                <label for="PesDeBase">Quantidade:</label>
+                 <input type="Text" id="PesDeBase" name="PesDeBase">
                 </div>`,
 
-                Parafuso: `
-                <div class="form-group">
-                    <label for="woodType">Tipo de Madeira:</label>
-                    <input type="text" id="woodType" name="woodType">
-                </div>
-                <div class="form-group">
-                    <label for="woodMeasurement">Medida (metros cúbicos):</label>
-                    <input type="number" id="woodMeasurement" name="woodMeasurement" step="0.01">
-                </div>
-                <div class="form-group">
-                    <label for="woodMaterial">Material:</label>
-                    <select id="woodMaterial" name="woodMaterial">
-                        <option value="Madeira">Madeira</option>
-                        <option value="Compensado">Compensado</option>
-                        <option value="MDF">MDF</option>
-                    </select>
+            Pianise: `
+                                          <div class="form-group">
+                <label for="Pianise">Quantidade:</label>
+                 <input type="Text" id="Pianise" name="Pianise">
                 </div>`,
 
-
-                ParamCartaoCapa: `
-                <div class="form-group">
-                    <label for="woodType">Tipo de Madeira:</label>
-                    <input type="text" id="woodType" name="woodType">
-                </div>
-                <div class="form-group">
-                    <label for="woodMeasurement">Medida (metros cúbicos):</label>
-                    <input type="number" id="woodMeasurement" name="woodMeasurement" step="0.01">
-                </div>
-                <div class="form-group">
-                    <label for="woodMaterial">Material:</label>
-                    <select id="woodMaterial" name="woodMaterial">
-                        <option value="Madeira">Madeira</option>
-                        <option value="Compensado">Compensado</option>
-                        <option value="MDF">MDF</option>
-                    </select>
+            Cola: `
+                                     <div class="form-group">
+                <label for="Cola">Quantidade (Litros):</label>
+                 <input type="Text" id="Cola" name="Cola">
                 </div>`,
 
+            Esponja: `
+            <div class="form-group">
+                <label for="EsponjaQuantity">Quantidade :</label>
+                <input type="text" id="EsponjaQuantity" name="EsponjaQuantity">
+            </div>
+
+            <div class="form-group">
+                <label for="EsponjaSize">Tamanho:</label>
+                <select id="EsponjaSize" name="EsponjaSize">
+                    <option value="1 Cmm">1 Cm</option>
+                    <option value="2 Cmm">2 Cm</option>
+                    <option value="4 Cmm">4 Cm</option>
+                    <option value="5 Cmm">5 Cm</option>
+                    <option value="10 Cmm">10 Cm Cm</option>
+                </select>
+            </div>`,
 
 
-                PesDeBase: `
-                <div class="form-group">
-                    <label for="woodType">Tipo de Madeira:</label>
-                    <input type="text" id="woodType" name="woodType">
-                </div>
-                <div class="form-group">
-                    <label for="woodMeasurement">Medida (metros cúbicos):</label>
-                    <input type="number" id="woodMeasurement" name="woodMeasurement" step="0.01">
-                </div>
-                <div class="form-group">
-                    <label for="woodMaterial">Material:</label>
-                    <select id="woodMaterial" name="woodMaterial">
-                        <option value="Madeira">Madeira</option>
-                        <option value="Compensado">Compensado</option>
-                        <option value="MDF">MDF</option>
-                    </select>
-                </div>`,
+            TecidoBambo: `
+            <div class="form-group">
+                <label for="TecidoBamboSize">Tamanho:</label>
+                <input type="text" id="TecidoBamboSize" name="TecidoBamboSize">
+            </div>
+           `,
 
-                Pianise: `
-                <div class="form-group">
-                    <label for="woodType">Tipo de Madeira:</label>
-                    <input type="text" id="woodType" name="woodType">
-                </div>
-                <div class="form-group">
-                    <label for="woodMeasurement">Medida (metros cúbicos):</label>
-                    <input type="number" id="woodMeasurement" name="woodMeasurement" step="0.01">
-                </div>
-                <div class="form-group">
-                    <label for="woodMaterial">Material:</label>
-                    <select id="woodMaterial" name="woodMaterial">
-                        <option value="Madeira">Madeira</option>
-                        <option value="Compensado">Compensado</option>
-                        <option value="MDF">MDF</option>
-                    </select>
-                </div>`,
-
-                Cola: `
-                <div class="form-group">
-                    <label for="woodType">Tipo de Madeira:</label>
-                    <input type="text" id="woodType" name="woodType">
-                </div>
-                <div class="form-group">
-                    <label for="woodMeasurement">Medida (metros cúbicos):</label>
-                    <input type="number" id="woodMeasurement" name="woodMeasurement" step="0.01">
-                </div>
-                <div class="form-group">
-                    <label for="woodMaterial">Material:</label>
-                    <select id="woodMaterial" name="woodMaterial">
-                        <option value="Madeira">Madeira</option>
-                        <option value="Compensado">Compensado</option>
-                        <option value="MDF">MDF</option>
-                    </select>
-                </div>`,
-
-
-                Esponja: `
-                <div class="form-group">
-                    <label for="woodType">Tipo de Madeira:</label>
-                    <input type="text" id="woodType" name="woodType">
-                </div>
-                <div class="form-group">
-                    <label for="woodMeasurement">Medida (metros cúbicos):</label>
-                    <input type="number" id="woodMeasurement" name="woodMeasurement" step="0.01">
-                </div>
-                <div class="form-group">
-                    <label for="woodMaterial">Material:</label>
-                    <select id="woodMaterial" name="woodMaterial">
-                        <option value="Madeira">Madeira</option>
-                        <option value="Compensado">Compensado</option>
-                        <option value="MDF">MDF</option>
-                    </select>
-                </div>`,
-
-
-                TecidoBambo: `
-                <div class="form-group">
-                    <label for="woodType">Tipo de Madeira:</label>
-                    <input type="text" id="woodType" name="woodType">
-                </div>
-                <div class="form-group">
-                    <label for="woodMeasurement">Medida (metros cúbicos):</label>
-                    <input type="number" id="woodMeasurement" name="woodMeasurement" step="0.01">
-                </div>
-                <div class="form-group">
-                    <label for="woodMaterial">Material:</label>
-                    <select id="woodMaterial" name="woodMaterial">
-                        <option value="Madeira">Madeira</option>
-                        <option value="Compensado">Compensado</option>
-                        <option value="MDF">MDF</option>
-                    </select>
-                </div>`,
-
-                Tela: `
-                <div class="form-group">
-                    <label for="woodType">Tipo de Madeira:</label>
-                    <input type="text" id="woodType" name="woodType">
-                </div>
-                <div class="form-group">
-                    <label for="woodMeasurement">Medida (metros cúbicos):</label>
-                    <input type="number" id="woodMeasurement" name="woodMeasurement" step="0.01">
-                </div>
-                <div class="form-group">
-                    <label for="woodMaterial">Material:</label>
-                    <select id="woodMaterial" name="woodMaterial">
-                        <option value="Madeira">Madeira</option>
-                        <option value="Compensado">Compensado</option>
-                        <option value="MDF">MDF</option>
-                    </select>
-                </div>`,
+            Tela: `
+             <div class="form-group">
+                <label for="TelaSize">Tamanho (Metros):</label>
+                <input type="text" id="TelaSize" name="TelaSize">
+            </div>
+           `,
 
 
 
-            };
+        };
 
-            if (fields[category]) {
-                specificFields.innerHTML = fields[category];
-            }
+        if (fields[category]) {
+            specificFields.innerHTML = fields[category];
         }
+    }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const categorySelect = document.getElementById('category');
-            categorySelect.addEventListener('change', showCategoryFields);
-        });
-    </script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const categorySelect = document.getElementById('category');
+        categorySelect.addEventListener('change', showCategoryFields);
+    });
+</script>
 
 </head>
 
 <body>
     <div class="navbar">
-        <img class="Logo" src="Logo.png" alt="Logo">
+        <a href="Home.html"><img class="Logo" src="Logo.png" alt="Logo"></a> 
 
         <button class="menu-toggle">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -436,10 +206,62 @@
     </div>
 
     <div class="main">
-        <h1>Vendas</h1>
-        <div class="Adcionar">
-            <button href="#0" class="cd-popup-trigger1"><i class="fa fa-plus" style="font-size:12px"></i> Venda</button>
+        <h1>...</h1>
+
+        <div class="Manutençao">
+            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+    <dotlottie-player src="https://lottie.host/14ee853c-9591-46d6-b08a-fcae27e4b0d8/JwZAQVL6T1.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+       </div>
+    <div>
+        <h3 style="color: rgba(202, 121, 0, 0.342);">Em Construção</h3>
+
+    </div>
+<!------<div class="Adcionar">
+            <button href="#0" class="cd-popup-trigger"><i class="fa fa-plus" style="font-size:12px"></i> Venda</button>
+            <div class="cd-popup">
+                <div class="cd-popup-container">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="category">Produto:</label>
+                                <select id="category" name="category" required>
+                                    <option value="">Selecione uma Categoria</option>
+                                    <option value="Aderente">Aderente</option>
+                                    <option value="Agrafos">Agrafos</option>
+                                    <option value="CartaoCapa">Cartão Capa</option>
+                                    <option value="ChapaUnitex">Chapa Unitex</option>
+                                    <option value="Cordavivo">Corda Vivo</option>
+                                    <option value="FitaDeSofa">Fita de Sofá</option>
+                                    <option value="Madeira">Madeira</option>
+                                    <option value="MolaDeEstufaria">Mola de Estufaria</option>
+                                    <option value="MolaDeColchao">Mola de Colchao </option>
+                                    <option value="Parafuso">Parafuso</option>
+                                    <option value="ParamCartaoCapa">Cartão Capa</option>
+                                    <option value="PesDeBase">Pés de Base</option>
+                                    <option value="Pianise">Pianise</option>
+                                    <option value="Cola">Cola</option>
+                                    <option value="Esponja">Esponja</option>
+                                    <option value="TecidoBambo">Tecido Bambo</option>
+                                    <option value="Tela">Tela</option>
+                                </select>
+                            </div>
+                            <br>
+                        </div>
+
+
+
+                       
+
+                        <div id="specificFields" class="form-row"></div>
+                        <button type="submit" class="submit"><a href="#">Adicionar</a></button>
+
+                    </form>
+
+                <a href="#0" class="cd-popup-close"><i class="fa fa-close" style="font-size:24px;color:rgba(255, 0, 0, 0.432);"></i></a>
+                </div>
             </div>
+
+        </div>
 
         <div class="Pesquisa" >
                 <input style="width: 200px; height: 26px;border-color: rgba(107, 95, 111, 0.13); color: rgba(107, 95, 111, 0.884);" type="date" placeholder="Data.." name="search">
@@ -454,6 +276,7 @@
                         <th>ID</th>
                         <th>Produto</th>
                         <th>Quantidade</th>
+                        <th>Tamanho(Cm)</th>
                         <th>Preço Unitário(Mzn)</th>
                         <th>Preço Total(Mzn)</th>
                         <th>Valor Total</th>
@@ -463,13 +286,13 @@
                 </thead>
 
 
-                <!----------------------------------------1º Produto---------------------------------------------------------------------------->
 
                 <tbody>
                     <tr>
                         <td>A2C</td>
                         <td>Molas</td>
                         <td>3</td>
+                        <td>-</td>
                         <td>100</td>
                         <td>300</td>
                         <td >30 000</td>
@@ -478,7 +301,6 @@
                         </td>
                     </tr>
 
-                    <!--------------------------------------------2º Produto------------------------------------------------------------------------>
 
 
 
@@ -489,7 +311,7 @@
         </div>
     </div>
 
-
+------------------------>    
 
 </body>
 

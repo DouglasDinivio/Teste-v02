@@ -415,7 +415,7 @@
 
 <body>
     <div class="navbar">
-        <img class="Logo" src="Logo.png" alt="Logo">
+        <a href="Home.html"><img class="Logo" src="Logo.png" alt="Logo"></a> 
 
         <button class="menu-toggle">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -438,7 +438,7 @@
     <div class="main">
         <h1>Usuarios</h1>
 <div class="Adcionar">
-<button href="#0" class="cd-popup-Adicionar"><i class="fa fa-plus" style="font-size:12px"></i> Adicionar</button>
+<button title="Cadastrar Usuario" href="#0" class="cd-popup-Adicionar"><i class="fa fa-plus" style="font-size:12px"></i> Cadastrar</button>
 </div>
         <div class="Pesquisa" >
                 <input style="width: 300px; height: 26px; border-color: rgba(107, 95, 111, 0.13);" type="search" placeholder="Search.." name="search">
@@ -450,12 +450,11 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Código</th>
-                        <th>Nome do produto</th>
-                        <th>Quantidade</th>
-                        <th>Tamanho</th>
-                        <th>Cor</th>
-                        <th>Última atualização</th>
+                        <th>Nome</th>
+                        <th>Apelido</th>
+                        <th>E-mail</th>
+                        <th>Contacto</th>
+                        <th>Password</th>
                         <th>Operações</th>
                     </tr>
                 </thead>
@@ -465,63 +464,55 @@
 
                 <tbody>
                     <tr>
-                        <td>001</td>
-                        <td>Produto A</td>
-                        <td>100</td>
-                        <td>M</td>
-                        <td>Azul</td>
-                        <td data-label="Última atualização" class="actualizacao">02/08/2024</td>
-
+                        <td>Joao Antonio</td>
+                        <td>Cossa</td>
+                        <td>JoaoCossa@gmail.com</td>
+                        <td>84001122333</td>
+                        <td>****</td>
                         
                         <td class="operations">
-                            <a href="#0" class="cd-popup-Edit"><i class="fa fa-edit"></i></a>
+                            <a href="#0" title="Editar Usuário" class="cd-popup-Edit"><i class="fa fa-edit"></i></a>
                             <div class="cd-popup1">
                                 <div class="cd-popup-container2">
                                     <form>
                                         <div class="form-row">
                                             <div class="form-group">
-                                                <label for="category">Categoria:</label>
-                                                <select id="category" name="category" required>
-                                                    <option value="">Selecione uma Categoria</option>
-                                                    <option value="Aderente">Aderente</option>
-                                                    <option value="Agrafos">Agrafos</option>
-                                                    <option value="CartaoCapa">Cartão Capa</option>
-                                                    <option value="ChapaUnitex">Chapa Unitex</option>
-                                                    <option value="Cordavivo">Corda Vivo</option>
-                                                    <option value="FitaDeSofa">Fita de Sofá</option>
-                                                    <option value="Madeira">Madeira</option>
-                                                    <option value="Material">Material</option>
-                                                    <option value="MolaDeCama">Mola de Cama</option>
-                                                    <option value="Molas">Molas</option>
-                                                    <option value="Parafuso">Parafuso</option>
-                                                    <option value="ParamCartaoCapa">Param. Cartão Capa</option>
-                                                    <option value="PesDeBase">Pés de Base</option>
-                                                    <option value="Pianise">Pianise</option>
-                                                    <option value="Cola">Cola</option>
-                                                    <option value="Esponja">Esponja</option>
-                                                    <option value="TecidoBambo">Tecido Bambo</option>
-                                                    <option value="Tela">Tela</option>
-                                                </select>
+                                               
                                             </div>
                                         </div>
 
                                         <div class="form-row">
                                             <div class="form-group">
-                                                <label for="productName">Nome do Produto:</label>
-                                                <input type="text" id="productName" name="productName" required>
-                                            </div>
+                                                <label for="Apelido">Codigo :</label>
+                                                <input type="text" id="Codigo" name="Apelido" required>
+                                            </div>                                            
+
                                             <div class="form-group">
-                                                <label for="productCode">Preço Unitário :</label>
-                                                <input type="text" id="productCode" name="productCode" required>
+                                                <label for="Apelido">Apelido :</label>
+                                                <input type="text" id="Apelido" name="Apelido" required>
                                             </div>
+                                        </div>
+                                        <div class="form-row">
+                                        
                                             <div class="form-group">
-                                                <label for="productCode">Preço Atacado :</label>
-                                                <input type="text" id="productCode" name="productCode" required>
+                                                <label for="E-mail">E-mail :</label>
+                                                <input type="text" id="E-mail" name="E-mail" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="Contacto">Contacto :</label>
+                                                <input type="text" id="Contacto" name="Contacto" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="Password">Password :</label>
+                                                <input type="text" id="Password" name="Password" required>
                                             </div>
                                         </div>
 
                                         <div id="specificFields" class="form-row"></div>
-                                        <button type="submit" class="submit"><a href="#">Submeter</a></button>
+                                        <button title="Cadastrar Usuário" type="submit" class="submit"><a href="#">Cadastrar</a></button>
 
                                     </form>
 
@@ -532,14 +523,14 @@
                             </div>
 
 
-                            <a href="#0" class="cd-popup-trigger"><i class="fa fa-trash-o"></i></a>
+                            <a href="#0" title="Apagar Usuário" class="cd-popup-trigger"><i class="fa fa-trash-o"></i></a>
 
                             <div class="cd-popup">
                                 <div class="cd-popup-container">
-                                    <p style="color: black;">Apagar este producto?</p>
+                                    <p style="color: black;">Apagar este Usuario?</p>
                                     <div class="cd-buttons">
-                                        <a href="#0">Yes</a>
-                                        <a href="#0">No</a>
+                                        <a href="#0">Sim</a>
+                                        <a href="#0">Não</a>
                                     </div>
                                     <a href="#0" class="cd-popup-close"><i class="fa fa-close" style="font-size:24px;color:rgba(255, 0, 0, 0.432);
 "></i></a>
